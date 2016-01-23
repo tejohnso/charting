@@ -27,6 +27,8 @@
     "it": false,
     "afterEach": false,
     "beforeEach": false,
+    "before": false,
+    "after": false,
     "requireRoot": false
   }
 }

@@ -1,0 +1,24 @@
+{
+  "name": "charting",
+  "version": "1.0.0",
+  "description": "Charting with chart.js",
+  "main": "index.js",
+  "scripts": {
+    "setup-test-env": "http-server & selenium-standalone start &",
+    "test": "mocha test",
+    "teardown-test-env": "(pgrep -f selenium && pgrep -f http-server) |xargs kill 2>/dev/null"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tejohnso/charting.git"
+  },
+  "author": "Tyler Johnson <mail@tyler-johnson.ca> (http://github.com/tejohnso)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tejohnso/charting/issues"
+  },
+  "homepage": "https://github.com/tejohnso/charting#readme",
+  "devDependencies": {
+    "webdriverio": "^3.4.0"
+  }
+}
