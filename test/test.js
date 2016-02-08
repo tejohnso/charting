@@ -36,10 +36,10 @@ describe("integration tests", function() {
   describe("charting", function() {
     it("renders the sample line chart", ()=>{
       var sampleData = require("./sample-data.json"),
-      emptyChartDataLength= 2000;
+      emptyChartDataLength = 2000;
 
       function sendComponentData(sampleData) {
-        document.querySelector("x-chart").setAttribute("config", sampleData);
+        document.querySelector("test-emitter").dispatchEvent(new CustomEvent("new-data", {detail: sampleData}));
       }
 
       function checkChartResult(emptyChartDataLength) {
@@ -48,7 +48,7 @@ describe("integration tests", function() {
         return chartData.length > emptyChartDataLength;
       }
 
-      client.execute(sendComponentData, JSON.stringify(sampleData));
+      client.execute(sendComponentData, sampleData);
 
       return client.waitUntil(()=>{
         return client.execute(checkChartResult, emptyChartDataLength)

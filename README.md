@@ -3,7 +3,12 @@
 Charting with chart.js as a web component
 
 #### Usage
-Import the component and then set a "config" attribute containing the data to chart.
+Attribute | Description | Default
+:---: | :---: | :---:
+emitter | A selector for an element that will emit a new data event | bigquery-data-converter
+eventName | The name of the emitted event | new-data
+
+Import the component with the required attributes
 
 See `test/` for reference implementation.
 
