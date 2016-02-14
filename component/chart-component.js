@@ -5,7 +5,7 @@ const proto = Object.create(HTMLElement.prototype, {
       this.ctx = this.canvas.getContext("2d");
       this.appendChild(this.canvas);
       this.setAttribute("type", this.getAttribute("type") || "Line");
-      this.setAttribute("eventName", this.getAttribute("eventName") || "new-data");
+      this.setAttribute("eventName", this.getAttribute("eventName") || "data");
       this.setAttribute("emitter", this.getAttribute("emitter") || "bigquery-data-converter");
       document.querySelector(this.getAttribute("emitter"))
       .addEventListener(this.getAttribute("eventName"), rechart.bind(this));
@@ -24,6 +24,5 @@ const proto = Object.create(HTMLElement.prototype, {
 document.registerElement("x-chart", {prototype: proto});
 
 function rechart(event) {
-  console.dir(this.ctx);
   new Chart(this.ctx)[this.getAttribute("type")](event.detail);
 }

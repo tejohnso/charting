@@ -6,7 +6,7 @@ Charting with chart.js as a web component
 Attribute | Description | Default
 :---: | :---: | :---:
 emitter | A selector for an element that will emit a new data event | bigquery-data-converter
-eventName | The name of the emitted event | new-data
+eventName | The name of the emitted event | data
 
 Import the component with the required attributes
 
