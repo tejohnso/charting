@@ -6,6 +6,8 @@
   "globals": {
     "google": false,
     "CustomEvent": false,
+    "HTMLElement": false,
+    "Chart": false,
     "window": false,
     "module": false,
     "__dirname": false,
