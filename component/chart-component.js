@@ -1,3 +1,4 @@
+(function() {
 const proto = Object.create(HTMLElement.prototype, {
   createdCallback: {
     value: function() {
@@ -36,3 +37,4 @@ document.registerElement("x-chart", {prototype: proto});
 function rechart(event) {
   new Chart(this.ctx)[this.getAttribute("type")](event.detail);
 }
+}())
