@@ -5,6 +5,7 @@
   "white": true,
   "globals": {
     "google": false,
+    "CustomEvent": false,
     "window": false,
     "module": false,
     "__dirname": false,

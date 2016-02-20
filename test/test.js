@@ -38,16 +38,6 @@ describe("integration tests", function() {
       var sampleData = require("./sample-data.json"),
       emptyChartDataLength = 2000;
 
-      function sendComponentData(sampleData) {
-        document.querySelector("test-emitter").dispatchEvent(new CustomEvent("new-data", {detail: sampleData}));
-      }
-
-      function checkChartResult(emptyChartDataLength) {
-        var chartData = document.querySelector("x-chart canvas").toDataURL();
-
-        return chartData.length > emptyChartDataLength;
-      }
-
       client.execute(sendComponentData, sampleData);
 
       return client.waitUntil(()=>{
@@ -56,6 +46,16 @@ describe("integration tests", function() {
           return chartResult.value;
         });
       }, 5000);
+
+      function sendComponentData(sampleData) {
+        document.querySelector("test-emitter").dispatchEvent(new CustomEvent("data", {detail: sampleData}));
+      }
+
+      function checkChartResult(emptyChartDataLength) {
+        var chartData = document.querySelector("x-chart canvas").toDataURL();
+
+        return chartData.length > emptyChartDataLength;
+      }
     });
   });
 
